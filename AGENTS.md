@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep customer and admin mock state in the shared browser store so all routes remain connected and backend-ready.
+- Build all product surfaces from reusable travel cards, form fields, page headers, and shared site/admin shells.
