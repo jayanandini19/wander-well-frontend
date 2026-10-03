@@ -103,10 +103,10 @@ export const adminConfigs: Record<string, () => React.ReactElement> = {
   destinations: () => <AdminTable title="Destinations" columns={["name", "country", "price", "category"]} rows={items(destinations)} />,
   packages: () => <AdminTable title="Packages" columns={["name", "country", "price", "category"]} rows={items(packages)} />,
   hotels: () => <AdminTable title="Hotels" columns={["name", "country", "price", "category"]} rows={items(hotels)} statuses={["Available", "Unavailable"]} />,
-  flights: () => <AdminTable title="Flights" columns={["airline", "route", "price"]} rows={flights.map((f, i) => ({ id: `FL-${200 + i}`, airline: String((f as Record<string, unknown>).airline ?? "Wanderly Air"), route: `${f.from} → ${f.to}`, price: `$${f.price}`, status: "Active" }))} />,
+  flights: () => <AdminTable title="Flights" columns={["airline", "route", "price"]} rows={flights.map((f, i) => ({ id: `FL-${200 + i}`, airline: String((f as Record<string, unknown>)["airline"] ?? "Wanderly Air"), route: `${f.from} → ${f.to}`, price: `$${f.price}`, status: "Active" }))} />,
   bookings: () => <BookingsAdmin />,
-  reviews: () => <AdminTable title="Reviews" columns={["name", "rating", "title"]} statuses={["Approved", "Pending", "Rejected"]} rows={reviews.map(r => ({ id: String(r.id), name: String((r as Record<string, unknown>).name ?? "Traveler"), rating: r.rating, title: String((r as Record<string, unknown>).title ?? ""), status: "Approved" }))} />,
-  gallery: () => <AdminTable title="Gallery" columns={["title", "category"]} statuses={["Published", "Hidden"]} rows={gallery.map((g, i) => ({ id: `G-${i + 1}`, title: g.name, category: g.category, status: "Published" }))} />,
+  reviews: () => <AdminTable title="Reviews" columns={["name", "rating", "title"]} statuses={["Approved", "Pending", "Rejected"]} rows={reviews.map(r => ({ id: String(r.id), name: String((r as Record<string, unknown>)["name"] ?? "Traveler"), rating: r.rating, title: String((r as Record<string, unknown>)["title"] ?? ""), status: "Approved" }))} />,
+  gallery: () => <AdminTable title="Gallery" columns={["title", "category"]} statuses={["Published", "Hidden"]} rows={gallery.map((g, i) => ({ id: `G-${i + 1}`, title: g.name ?? "", category: g.category, status: "Published" }))} />,
   messages: () => <AdminTable title="Contact Messages" columns={["from", "subject"]} statuses={["Unread", "Read"]} rows={[["Lena Park", "Group booking to Kyoto"], ["Omar Haddad", "Change travel dates"], ["Grace Kim", "Visa question for Bali"], ["Diego Ruiz", "Honeymoon recommendations"]].map(([from, subject], i) => ({ id: `M-${i + 1}`, from, subject, status: "Unread" }))} />,
 };
 
