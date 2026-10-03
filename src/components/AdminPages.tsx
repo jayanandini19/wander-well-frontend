@@ -96,7 +96,7 @@ export function AdminTable({ title, rows: initial, columns, statuses = ["Active"
   );
 }
 
-const items = (list: { id: string; name?: string; country: string; price?: number; category: string }[]) => list.map(x => ({ id: x.id, name: x.name ?? "", country: x.country, price: `$${x.price ?? 0}`, category: x.category, status: "Active" }));
+const items = (list: { id: string; name?: string | undefined; country: string; price?: number | undefined; category: string }[]) => list.map(x => ({ id: x.id, name: x.name ?? "", country: x.country, price: `$${x.price ?? 0}`, category: x.category, status: "Active" }));
 
 export const adminConfigs: Record<string, () => React.ReactElement> = {
   users: () => <AdminTable title="Users" columns={["name", "email", "phone", "joined", "role", "bookings"]} rows={adminUsers.map(u => ({ ...u }))} />,
