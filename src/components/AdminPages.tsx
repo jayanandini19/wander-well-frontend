@@ -1,3 +1,4 @@
+import type React from "react";
 import { Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
@@ -69,7 +70,7 @@ export function AdminTable({ title, rows: initial, columns, statuses = ["Active"
   const [adding, setAdding] = useState(false);
   const filtered = useMemo(() => rows.filter(r => JSON.stringify(r).toLowerCase().includes(q.toLowerCase())), [rows, q]);
   const per = 8, view = filtered.slice(page * per, page * per + per), pages = Math.max(1, Math.ceil(filtered.length / per));
-  const cycle = (r: Row) => { const s = statuses[(statuses.indexOf(r.status) + 1) % statuses.length]; setRows(x => x.map(v => v.id === r.id ? { ...v, status: s } : v)); toast.success(`Status changed to ${s}`); };
+  const cycle = (r: Row) => { const s = statuses[(statuses.indexOf(r.status) + 1) % statuses.length] ?? "Active"; setRows(x => x.map(v => v.id === r.id ? { ...v, status: s } : v)); toast.success(`Status changed to ${s}`); };
   const remove = (r: Row) => { if (confirm(`Delete ${r.id}?`)) { setRows(x => x.filter(v => v.id !== r.id)); toast.success("Item deleted"); } };
   return (
     <AdminLayout title={title}>
@@ -78,7 +79,7 @@ export function AdminTable({ title, rows: initial, columns, statuses = ["Active"
         <Button onClick={() => setAdding(a => !a)}><Plus />Add new</Button>
       </div>
       {adding && (
-        <form className="mb-4 grid gap-3 rounded-lg border bg-card p-4 sm:grid-cols-3" onSubmit={e => { e.preventDefault(); const f = new FormData(e.currentTarget); const r: Row = { id: `N-${Date.now() % 100000}`, status: statuses[0] }; columns.forEach(c => (r[c] = String(f.get(c) || ""))); setRows(x => [r, ...x]); setAdding(false); toast.success("Item added"); }}>
+        <form className="mb-4 grid gap-3 rounded-lg border bg-card p-4 sm:grid-cols-3" onSubmit={e => { e.preventDefault(); const f = new FormData(e.currentTarget); const r: Row = { id: `N-${Date.now() % 100000}`, status: statuses[0] ?? "Active" }; columns.forEach(c => (r[c] = String(f.get(c) || ""))); setRows(x => [r, ...x]); setAdding(false); toast.success("Item added"); }}>
           {columns.map(c => <Field key={c} name={c} label={c} required />)}
           <Button className="self-end">Save</Button>
         </form>
@@ -95,9 +96,9 @@ export function AdminTable({ title, rows: initial, columns, statuses = ["Active"
   );
 }
 
-const items = (list: { id: string; name: string; country: string; price: number; category: string }[]) => list.map(x => ({ id: x.id, name: x.name, country: x.country, price: `$${x.price}`, category: x.category, status: "Active" }));
+const items = (list: { id: string; name?: string; country: string; price?: number; category: string }[]) => list.map(x => ({ id: x.id, name: x.name ?? "", country: x.country, price: `$${x.price ?? 0}`, category: x.category, status: "Active" }));
 
-export const adminConfigs: Record<string, () => JSX.Element> = {
+export const adminConfigs: Record<string, () => React.ReactElement> = {
   users: () => <AdminTable title="Users" columns={["name", "email", "phone", "joined", "role", "bookings"]} rows={adminUsers.map(u => ({ ...u }))} />,
   destinations: () => <AdminTable title="Destinations" columns={["name", "country", "price", "category"]} rows={items(destinations)} />,
   packages: () => <AdminTable title="Packages" columns={["name", "country", "price", "category"]} rows={items(packages)} />,
