@@ -112,7 +112,7 @@ export const adminConfigs: Record<string, () => React.ReactElement> = {
 
 function BookingsAdmin() {
   const { bookings } = useStore();
-  const base = [...bookings, ...adminUsers.map((u, i) => ({ id: `WD-${300100 + i}`, name: destinations[i].name, type: ["Package", "Hotel", "Flight"][i % 3], amount: 900 + i * 410, status: ["Confirmed", "Pending", "Completed", "Cancelled"][i % 4], date: u.joined, customer: u.name }))];
+  const base = [...bookings, ...adminUsers.map((u, i) => ({ id: `WD-${300100 + i}`, name: destinations[i]?.name ?? "Trip", type: ["Package", "Hotel", "Flight"][i % 3] ?? "Package", amount: 900 + i * 410, status: ["Confirmed", "Pending", "Completed", "Cancelled"][i % 4] ?? "Pending", date: u.joined, customer: u.name }))];
   return <AdminTable title="Bookings" columns={["customer", "type", "name", "date", "amount"]} statuses={["Confirmed", "Pending", "Completed", "Cancelled"]} rows={base.map(b => ({ customer: "You", ...b, amount: `$${b.amount}` }))} />;
 }
 
