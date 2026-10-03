@@ -98,7 +98,7 @@ export function AdminTable({ title, rows: initial, columns, statuses = ["Active"
 
 const items = (list: { id: string; name?: string | undefined; country: string; price?: number | undefined; category: string }[]) => list.map(x => ({ id: x.id, name: x.name ?? "", country: x.country, price: `$${x.price ?? 0}`, category: x.category, status: "Active" }));
 
-export const adminConfigs: Record<string, () => React.ReactElement> = {
+export const adminConfigs = {
   users: () => <AdminTable title="Users" columns={["name", "email", "phone", "joined", "role", "bookings"]} rows={adminUsers.map(u => ({ ...u }))} />,
   destinations: () => <AdminTable title="Destinations" columns={["name", "country", "price", "category"]} rows={items(destinations)} />,
   packages: () => <AdminTable title="Packages" columns={["name", "country", "price", "category"]} rows={items(packages)} />,
@@ -108,7 +108,7 @@ export const adminConfigs: Record<string, () => React.ReactElement> = {
   reviews: () => <AdminTable title="Reviews" columns={["name", "rating", "title"]} statuses={["Approved", "Pending", "Rejected"]} rows={reviews.map(r => ({ id: String(r.id), name: String((r as Record<string, unknown>)["name"] ?? "Traveler"), rating: r.rating, title: String((r as Record<string, unknown>)["title"] ?? ""), status: "Approved" }))} />,
   gallery: () => <AdminTable title="Gallery" columns={["title", "category"]} statuses={["Published", "Hidden"]} rows={gallery.map((g, i) => ({ id: `G-${i + 1}`, title: g.name ?? "", category: g.category, status: "Published" }))} />,
   messages: () => <AdminTable title="Contact Messages" columns={["from", "subject"]} statuses={["Unread", "Read"]} rows={[["Lena Park", "Group booking to Kyoto"], ["Omar Haddad", "Change travel dates"], ["Grace Kim", "Visa question for Bali"], ["Diego Ruiz", "Honeymoon recommendations"]].map(([from, subject], i) => ({ id: `M-${i + 1}`, from: from ?? "", subject: subject ?? "", status: "Unread" }))} />,
-};
+} satisfies Record<string, () => React.ReactElement>;
 
 function BookingsAdmin() {
   const { bookings } = useStore();
