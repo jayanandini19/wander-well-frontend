@@ -10,33 +10,388 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FlightsRouteImport } from './routes/flights'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ItineraryRouteImport } from './routes/itinerary'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as RegisterRouteImport } from './routes/register'
+import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as WishlistRouteImport } from './routes/wishlist'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminBookingsRouteImport } from './routes/admin.bookings'
+import { Route as AdminDestinationsRouteImport } from './routes/admin.destinations'
+import { Route as AdminFlightsRouteImport } from './routes/admin.flights'
+import { Route as AdminGalleryRouteImport } from './routes/admin.gallery'
+import { Route as AdminHotelsRouteImport } from './routes/admin.hotels'
+import { Route as AdminMessagesRouteImport } from './routes/admin.messages'
+import { Route as AdminPackagesRouteImport } from './routes/admin.packages'
+import { Route as AdminReviewsRouteImport } from './routes/admin.reviews'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AdminUsersRouteImport } from './routes/admin.users'
+import { Route as DestinationsIndexRouteImport } from './routes/destinations.index'
+import { Route as DestinationsIdRouteImport } from './routes/destinations.$id'
+import { Route as HotelsIndexRouteImport } from './routes/hotels.index'
+import { Route as HotelsIdRouteImport } from './routes/hotels.$id'
+import { Route as PackagesIndexRouteImport } from './routes/packages.index'
+import { Route as PackagesIdRouteImport } from './routes/packages.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FlightsRoute = FlightsRouteImport.update({
+  id: '/flights',
+  path: '/flights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ItineraryRoute = ItineraryRouteImport.update({
+  id: '/itinerary',
+  path: '/itinerary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegisterRoute = RegisterRouteImport.update({
+  id: '/register',
+  path: '/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WishlistRoute = WishlistRouteImport.update({
+  id: '/wishlist',
+  path: '/wishlist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/admin/',
+  path: '/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminBookingsRoute = AdminBookingsRouteImport.update({
+  id: '/admin/bookings',
+  path: '/admin/bookings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDestinationsRoute = AdminDestinationsRouteImport.update({
+  id: '/admin/destinations',
+  path: '/admin/destinations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminFlightsRoute = AdminFlightsRouteImport.update({
+  id: '/admin/flights',
+  path: '/admin/flights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminGalleryRoute = AdminGalleryRouteImport.update({
+  id: '/admin/gallery',
+  path: '/admin/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminHotelsRoute = AdminHotelsRouteImport.update({
+  id: '/admin/hotels',
+  path: '/admin/hotels',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminMessagesRoute = AdminMessagesRouteImport.update({
+  id: '/admin/messages',
+  path: '/admin/messages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminPackagesRoute = AdminPackagesRouteImport.update({
+  id: '/admin/packages',
+  path: '/admin/packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminReviewsRoute = AdminReviewsRouteImport.update({
+  id: '/admin/reviews',
+  path: '/admin/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/admin/settings',
+  path: '/admin/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsIndexRoute = DestinationsIndexRouteImport.update({
+  id: '/destinations/',
+  path: '/destinations/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationsIdRoute = DestinationsIdRouteImport.update({
+  id: '/destinations/$id',
+  path: '/destinations/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HotelsIndexRoute = HotelsIndexRouteImport.update({
+  id: '/hotels/',
+  path: '/hotels/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HotelsIdRoute = HotelsIdRouteImport.update({
+  id: '/hotels/$id',
+  path: '/hotels/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackagesIndexRoute = PackagesIndexRouteImport.update({
+  id: '/packages/',
+  path: '/packages/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackagesIdRoute = PackagesIdRouteImport.update({
+  id: '/packages/$id',
+  path: '/packages/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/contact': typeof ContactRoute
+  '/flights': typeof FlightsRoute
+  '/gallery': typeof GalleryRoute
+  '/itinerary': typeof ItineraryRoute
+  '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/reviews': typeof ReviewsRoute
+  '/wishlist': typeof WishlistRoute
+  '/admin/bookings': typeof AdminBookingsRoute
+  '/admin/destinations': typeof AdminDestinationsRoute
+  '/admin/flights': typeof AdminFlightsRoute
+  '/admin/gallery': typeof AdminGalleryRoute
+  '/admin/hotels': typeof AdminHotelsRoute
+  '/admin/messages': typeof AdminMessagesRoute
+  '/admin/packages': typeof AdminPackagesRoute
+  '/admin/reviews': typeof AdminReviewsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/destinations/$id': typeof DestinationsIdRoute
+  '/hotels/$id': typeof HotelsIdRoute
+  '/packages/$id': typeof PackagesIdRoute
+  '/admin/': typeof AdminIndexRoute
+  '/destinations/': typeof DestinationsIndexRoute
+  '/hotels/': typeof HotelsIndexRoute
+  '/packages/': typeof PackagesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/contact': typeof ContactRoute
+  '/flights': typeof FlightsRoute
+  '/gallery': typeof GalleryRoute
+  '/itinerary': typeof ItineraryRoute
+  '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/reviews': typeof ReviewsRoute
+  '/wishlist': typeof WishlistRoute
+  '/admin/bookings': typeof AdminBookingsRoute
+  '/admin/destinations': typeof AdminDestinationsRoute
+  '/admin/flights': typeof AdminFlightsRoute
+  '/admin/gallery': typeof AdminGalleryRoute
+  '/admin/hotels': typeof AdminHotelsRoute
+  '/admin/messages': typeof AdminMessagesRoute
+  '/admin/packages': typeof AdminPackagesRoute
+  '/admin/reviews': typeof AdminReviewsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/destinations/$id': typeof DestinationsIdRoute
+  '/hotels/$id': typeof HotelsIdRoute
+  '/packages/$id': typeof PackagesIdRoute
+  '/admin': typeof AdminIndexRoute
+  '/destinations': typeof DestinationsIndexRoute
+  '/hotels': typeof HotelsIndexRoute
+  '/packages': typeof PackagesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/checkout': typeof CheckoutRoute
+  '/contact': typeof ContactRoute
+  '/flights': typeof FlightsRoute
+  '/gallery': typeof GalleryRoute
+  '/itinerary': typeof ItineraryRoute
+  '/login': typeof LoginRoute
+  '/profile': typeof ProfileRoute
+  '/register': typeof RegisterRoute
+  '/reviews': typeof ReviewsRoute
+  '/wishlist': typeof WishlistRoute
+  '/admin/bookings': typeof AdminBookingsRoute
+  '/admin/destinations': typeof AdminDestinationsRoute
+  '/admin/flights': typeof AdminFlightsRoute
+  '/admin/gallery': typeof AdminGalleryRoute
+  '/admin/hotels': typeof AdminHotelsRoute
+  '/admin/messages': typeof AdminMessagesRoute
+  '/admin/packages': typeof AdminPackagesRoute
+  '/admin/reviews': typeof AdminReviewsRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/users': typeof AdminUsersRoute
+  '/destinations/$id': typeof DestinationsIdRoute
+  '/hotels/$id': typeof HotelsIdRoute
+  '/packages/$id': typeof PackagesIdRoute
+  '/admin/': typeof AdminIndexRoute
+  '/destinations/': typeof DestinationsIndexRoute
+  '/hotels/': typeof HotelsIndexRoute
+  '/packages/': typeof PackagesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/checkout'
+    | '/contact'
+    | '/flights'
+    | '/gallery'
+    | '/itinerary'
+    | '/login'
+    | '/profile'
+    | '/register'
+    | '/reviews'
+    | '/wishlist'
+    | '/admin/bookings'
+    | '/admin/destinations'
+    | '/admin/flights'
+    | '/admin/gallery'
+    | '/admin/hotels'
+    | '/admin/messages'
+    | '/admin/packages'
+    | '/admin/reviews'
+    | '/admin/settings'
+    | '/admin/users'
+    | '/destinations/$id'
+    | '/hotels/$id'
+    | '/packages/$id'
+    | '/admin/'
+    | '/destinations/'
+    | '/hotels/'
+    | '/packages/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/checkout'
+    | '/contact'
+    | '/flights'
+    | '/gallery'
+    | '/itinerary'
+    | '/login'
+    | '/profile'
+    | '/register'
+    | '/reviews'
+    | '/wishlist'
+    | '/admin/bookings'
+    | '/admin/destinations'
+    | '/admin/flights'
+    | '/admin/gallery'
+    | '/admin/hotels'
+    | '/admin/messages'
+    | '/admin/packages'
+    | '/admin/reviews'
+    | '/admin/settings'
+    | '/admin/users'
+    | '/destinations/$id'
+    | '/hotels/$id'
+    | '/packages/$id'
+    | '/admin'
+    | '/destinations'
+    | '/hotels'
+    | '/packages'
+  id:
+    | '__root__'
+    | '/'
+    | '/checkout'
+    | '/contact'
+    | '/flights'
+    | '/gallery'
+    | '/itinerary'
+    | '/login'
+    | '/profile'
+    | '/register'
+    | '/reviews'
+    | '/wishlist'
+    | '/admin/bookings'
+    | '/admin/destinations'
+    | '/admin/flights'
+    | '/admin/gallery'
+    | '/admin/hotels'
+    | '/admin/messages'
+    | '/admin/packages'
+    | '/admin/reviews'
+    | '/admin/settings'
+    | '/admin/users'
+    | '/destinations/$id'
+    | '/hotels/$id'
+    | '/packages/$id'
+    | '/admin/'
+    | '/destinations/'
+    | '/hotels/'
+    | '/packages/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CheckoutRoute: typeof CheckoutRoute
+  ContactRoute: typeof ContactRoute
+  FlightsRoute: typeof FlightsRoute
+  GalleryRoute: typeof GalleryRoute
+  ItineraryRoute: typeof ItineraryRoute
+  LoginRoute: typeof LoginRoute
+  ProfileRoute: typeof ProfileRoute
+  RegisterRoute: typeof RegisterRoute
+  ReviewsRoute: typeof ReviewsRoute
+  WishlistRoute: typeof WishlistRoute
+  AdminBookingsRoute: typeof AdminBookingsRoute
+  AdminDestinationsRoute: typeof AdminDestinationsRoute
+  AdminFlightsRoute: typeof AdminFlightsRoute
+  AdminGalleryRoute: typeof AdminGalleryRoute
+  AdminHotelsRoute: typeof AdminHotelsRoute
+  AdminMessagesRoute: typeof AdminMessagesRoute
+  AdminPackagesRoute: typeof AdminPackagesRoute
+  AdminReviewsRoute: typeof AdminReviewsRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminUsersRoute: typeof AdminUsersRoute
+  DestinationsIdRoute: typeof DestinationsIdRoute
+  HotelsIdRoute: typeof HotelsIdRoute
+  PackagesIdRoute: typeof PackagesIdRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+  DestinationsIndexRoute: typeof DestinationsIndexRoute
+  HotelsIndexRoute: typeof HotelsIndexRoute
+  PackagesIndexRoute: typeof PackagesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +403,227 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/flights': {
+      id: '/flights'
+      path: '/flights'
+      fullPath: '/flights'
+      preLoaderRoute: typeof FlightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/itinerary': {
+      id: '/itinerary'
+      path: '/itinerary'
+      fullPath: '/itinerary'
+      preLoaderRoute: typeof ItineraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/register': {
+      id: '/register'
+      path: '/register'
+      fullPath: '/register'
+      preLoaderRoute: typeof RegisterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wishlist': {
+      id: '/wishlist'
+      path: '/wishlist'
+      fullPath: '/wishlist'
+      preLoaderRoute: typeof WishlistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/': {
+      id: '/admin/'
+      path: '/admin'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/bookings': {
+      id: '/admin/bookings'
+      path: '/admin/bookings'
+      fullPath: '/admin/bookings'
+      preLoaderRoute: typeof AdminBookingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/destinations': {
+      id: '/admin/destinations'
+      path: '/admin/destinations'
+      fullPath: '/admin/destinations'
+      preLoaderRoute: typeof AdminDestinationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/flights': {
+      id: '/admin/flights'
+      path: '/admin/flights'
+      fullPath: '/admin/flights'
+      preLoaderRoute: typeof AdminFlightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/gallery': {
+      id: '/admin/gallery'
+      path: '/admin/gallery'
+      fullPath: '/admin/gallery'
+      preLoaderRoute: typeof AdminGalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/hotels': {
+      id: '/admin/hotels'
+      path: '/admin/hotels'
+      fullPath: '/admin/hotels'
+      preLoaderRoute: typeof AdminHotelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/messages': {
+      id: '/admin/messages'
+      path: '/admin/messages'
+      fullPath: '/admin/messages'
+      preLoaderRoute: typeof AdminMessagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/packages': {
+      id: '/admin/packages'
+      path: '/admin/packages'
+      fullPath: '/admin/packages'
+      preLoaderRoute: typeof AdminPackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/reviews': {
+      id: '/admin/reviews'
+      path: '/admin/reviews'
+      fullPath: '/admin/reviews'
+      preLoaderRoute: typeof AdminReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/admin/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations/': {
+      id: '/destinations/'
+      path: '/destinations'
+      fullPath: '/destinations/'
+      preLoaderRoute: typeof DestinationsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destinations/$id': {
+      id: '/destinations/$id'
+      path: '/destinations/$id'
+      fullPath: '/destinations/$id'
+      preLoaderRoute: typeof DestinationsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hotels/': {
+      id: '/hotels/'
+      path: '/hotels'
+      fullPath: '/hotels/'
+      preLoaderRoute: typeof HotelsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hotels/$id': {
+      id: '/hotels/$id'
+      path: '/hotels/$id'
+      fullPath: '/hotels/$id'
+      preLoaderRoute: typeof HotelsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/packages/': {
+      id: '/packages/'
+      path: '/packages'
+      fullPath: '/packages/'
+      preLoaderRoute: typeof PackagesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/packages/$id': {
+      id: '/packages/$id'
+      path: '/packages/$id'
+      fullPath: '/packages/$id'
+      preLoaderRoute: typeof PackagesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CheckoutRoute: CheckoutRoute,
+  ContactRoute: ContactRoute,
+  FlightsRoute: FlightsRoute,
+  GalleryRoute: GalleryRoute,
+  ItineraryRoute: ItineraryRoute,
+  LoginRoute: LoginRoute,
+  ProfileRoute: ProfileRoute,
+  RegisterRoute: RegisterRoute,
+  ReviewsRoute: ReviewsRoute,
+  WishlistRoute: WishlistRoute,
+  AdminBookingsRoute: AdminBookingsRoute,
+  AdminDestinationsRoute: AdminDestinationsRoute,
+  AdminFlightsRoute: AdminFlightsRoute,
+  AdminGalleryRoute: AdminGalleryRoute,
+  AdminHotelsRoute: AdminHotelsRoute,
+  AdminMessagesRoute: AdminMessagesRoute,
+  AdminPackagesRoute: AdminPackagesRoute,
+  AdminReviewsRoute: AdminReviewsRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminUsersRoute: AdminUsersRoute,
+  DestinationsIdRoute: DestinationsIdRoute,
+  HotelsIdRoute: HotelsIdRoute,
+  PackagesIdRoute: PackagesIdRoute,
+  AdminIndexRoute: AdminIndexRoute,
+  DestinationsIndexRoute: DestinationsIndexRoute,
+  HotelsIndexRoute: HotelsIndexRoute,
+  PackagesIndexRoute: PackagesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

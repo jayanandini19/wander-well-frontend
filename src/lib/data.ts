@@ -21,9 +21,9 @@ const places = [
 
 export const destinations: TravelItem[] = places.map((p,i)=>({id:p[0],name:p[1],country:p[2],price:p[3],rating:p[4],category:p[5],description:p[6],reviews:184+i*37,image:destinationsImage,crop:i%2?"right":"left"}));
 
-export const packages = destinations.slice(0,8).map((d,i)=>({...d,id:`escape-${d.id}`,name:["Parisian Art & Table","Desert to Skyline","Bali Soul Journey","Barefoot Maldives","London Icons","Singapore Family Discovery","Japan in Bloom","Alpine Grand Tour"][i],image:packagesImage,crop:i%2?"right":"left",price:d.price+400,duration:[6,5,8,7,6,5,9,8][i],includes:["Boutique stays","Daily breakfast","Local guide"]}));
+export const packages = destinations.slice(0,8).map((d,i)=>({...d,id:`escape-${d.id}`,name:["Parisian Art & Table","Desert to Skyline","Bali Soul Journey","Barefoot Maldives","London Icons","Singapore Family Discovery","Japan in Bloom","Alpine Grand Tour"][i] ?? d.name,image:packagesImage,crop:i%2?"right":"left",price:d.price+400,duration:[6,5,8,7,6,5,9,8][i] ?? 6,includes:["Boutique stays","Daily breakfast","Local guide"]}));
 
-export const hotels = destinations.slice(0,8).map((d,i)=>({...d,id:`hotel-${d.id}`,name:["Maison Lumière","The Palm Atelier","Ubud Canopy House","Azure Reef Villas","The Kensington Row","Marina Garden Hotel","Kumo Tokyo","Alpenhof Retreat"][i],image:hotelsImage,crop:i%2?"right":"left",price:[280,420,190,650,310,270,340,390][i],amenities:["Pool","Breakfast","Wi-Fi","Spa"],stars:i%3+3}));
+export const hotels = destinations.slice(0,8).map((d,i)=>({...d,id:`hotel-${d.id}`,name:["Maison Lumière","The Palm Atelier","Ubud Canopy House","Azure Reef Villas","The Kensington Row","Marina Garden Hotel","Kumo Tokyo","Alpenhof Retreat"][i] ?? d.name,image:hotelsImage,crop:i%2?"right":"left",price:[280,420,190,650,310,270,340,390][i] ?? 300,amenities:["Pool","Breakfast","Wi-Fi","Spa"],stars:i%3+3}));
 
 export const flights = [
   {id:"WY218",airline:"Wander Airways",from:"JFK",to:"CDG",depart:"08:25",arrive:"21:10",duration:"7h 45m",stops:"Nonstop",price:684},

@@ -16,7 +16,7 @@ export function StoreProvider({children}:{children:ReactNode}){const [s,setS]=us
  const book=(type:string,name:string,amount:number)=>{const id=`WD-${Math.floor(100000+Math.random()*899999)}`;setS(x=>({...x,bookings:[{id,type,name,amount,status:"Confirmed",date:"Dec 6, 2026"},...x.bookings]}));toast.success("Booking confirmed");return id};
  const addActivity=(title:string)=>{setS(x=>({...x,activities:[...x.activities,{id:crypto.randomUUID(),day:2,time:"14:00",title,place:"Added place"}]}));toast.success("Added to itinerary")};
  const deleteActivity=(id:string)=>setS(x=>({...x,activities:x.activities.filter(a=>a.id!==id)}));
- const moveActivity=(id:string,delta:number)=>setS(x=>{const a=[...x.activities],i=a.findIndex(v=>v.id===id),j=i+delta;if(i<0||j<0||j>=a.length)return x;[a[i],a[j]]=[a[j],a[i]];return {...x,activities:a}});
+ const moveActivity=(id:string,delta:number)=>setS(x=>{const a=[...x.activities],i=a.findIndex(v=>v.id===id),j=i+delta;if(i<0||j<0||j>=a.length)return x;const t=a[i]!;a[i]=a[j]!;a[j]=t;return {...x,activities:a}});
  const updateProfile=(user:User)=>{setS(x=>({...x,user}));toast.success("Profile updated")};
  return <Ctx.Provider value={{...s,login,register,logout,toggleWish,book,addActivity,deleteActivity,moveActivity,updateProfile}}>{children}</Ctx.Provider>}
 export function useStore(){const v=useContext(Ctx);if(!v)throw new Error("StoreProvider missing");return v}
