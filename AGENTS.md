@@ -11,3 +11,4 @@
 
 - Keep customer and admin mock state in the shared browser store so all routes remain connected and backend-ready.
 - Build all product surfaces from reusable travel cards, form fields, page headers, and shared site/admin shells.
+- Keep all shared shells and feature layouts usable from 320px upward; contain deliberate horizontal scrolling within local navigation or data-table regions.
