@@ -156,12 +156,17 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     min-width: 320px;
+    overflow-x: clip;
   }
   button, a { letter-spacing: 0; }
-  img { max-width: 100%; }
+  img { max-width: 100%; height: auto; }
+  input, select, textarea, button { max-width: 100%; }
+  main { min-width: 0; }
 }
 
-@utility container-shell { width: min(100% - 2rem, 78rem); margin-inline: auto; }
+@utility container-shell { width: min(100% - 1.5rem, 78rem); margin-inline: auto; }
 @utility eyebrow { color: var(--color-primary); font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+
+@media (min-width: 640px) { .container-shell { width: min(100% - 2.5rem, 78rem); } }
 
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; } }
