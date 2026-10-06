@@ -4,5 +4,5 @@
 - [x] Customer actions: auth, profile, wishlist, reviews, contact, itinerary
 - [x] Booking flows: package/hotel/flight details, checkout, confirmations
 - [x] Admin: dashboard and all management pages with mock CRUD
-- [ ] Responsive polish: shared shell, customer journeys, and admin workspace
-- [ ] Verification: routes, key interactions, responsive layouts, diagnostics
+- [x] Responsive polish: shared shell, customer journeys, and admin workspace
+- [x] Verification: routes, key interactions, responsive layouts, diagnostics
