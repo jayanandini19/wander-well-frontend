@@ -1,4 +1,4 @@
-# Wanderlust Navigator
+# Wanderwell Navigator
 
 Build a complete, modern, responsive Travel & Tourism Booking Website using the frontend only.
 
